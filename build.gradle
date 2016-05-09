@@ -22,7 +22,7 @@ apply plugin: "us.kirchmeier.capsule"
 mule.version = '3.7.0'
 mule.muleEnterprise = false
 
-group = "com.unity3d"
+group = "com.redpill"
 archivesBaseName = "mule-example"
 version = 1.0
 description = "Example of a Mule Microservice"
