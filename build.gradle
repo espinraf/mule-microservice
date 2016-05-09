@@ -55,7 +55,7 @@ configurations {
 		excluded
 }
 
-//Creates fatJar task using Capsule plugin including shadowRuntime Configuration
+//Creates microserviceJar task using Capsule plugin including shadowRuntime Configuration
 //and Mule specific properties
 tasks.create(name: "microserviceJar", type: FatCapsule) {
     applicationClass "com.redpill.MicroserviceMuleBootstrap"
