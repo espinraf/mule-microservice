@@ -27,3 +27,7 @@ gradle clean microserviceJar
 ```
 java -jar build/libs/mule-example-1.0-microservice.jar 
 ```
+
+5) Go to http://localhost:8081/mule-ms
+
+You should see in you browser: "Hello World from Mule Microservice"
