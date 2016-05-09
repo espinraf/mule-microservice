@@ -1,0 +1,75 @@
+buildscript {
+	dependencies {
+		classpath group: 'org.mulesoft.build', name: 'mule-gradle-plugin',    version: '2.0.0-RC1'
+		classpath group: 'us.kirchmeier',      name: 'gradle-capsule-plugin', version: '1.0.1'
+	}
+	repositories {
+        mavenLocal()
+		maven {
+			url 'http://repository.mulesoft.org/releases'
+		}
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+}
+
+apply plugin: 'com.mulesoft.studio'
+
+/** Apply Capsule plugin */
+apply plugin: "us.kirchmeier.capsule"
+
+mule.version = '3.7.0'
+mule.muleEnterprise = false
+
+group = "com.unity3d"
+archivesBaseName = "mule-example"
+version = 1.0
+description = "Example of a Mule Microservice"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+mule.components {
+
+    //include DB module. (Example)
+    modules += 'db'
+
+}
+
+//Capsule plugin to include all Mule specific directories.
+sourceSets.main.resources {
+	srcDir "src/main/groovy"
+	srcDir "src/main/app"
+	srcDir "src/main/api"
+}
+
+//Removes xceres for Capsule jar file, otherwise Mule crashes
+configurations {
+	shadowRuntime {
+			extendsFrom runtime
+			exclude group: "xerces", module: "xercesImpl"
+			exclude group: "xerces", module: "xml-serializer"
+		}
+
+		excluded
+}
+
+//Creates fatJar task using Capsule plugin including shadowRuntime Configuration
+//and Mule specific properties
+tasks.create(name: "microserviceJar", type: FatCapsule) {
+    applicationClass "com.redpill.MicroserviceMuleBootstrap"
+
+    from sourceSets.main.resources
+    embedConfiguration configurations.shadowRuntime
+	classifier 'microservice'
+
+    capsuleManifest {
+		//If you use Mule Enterprise, this handles the the License
+        systemProperties["java.util.prefs.PreferencesFactory"] = "com.mulesource.licm.pref.MulePreferencesFactory"
+        minJavaVersion = targetCompatibility
+		applicationId = archivesBaseName
+		applicationName = "Build by " + System.getProperty("user.name") + " Mule ver: " + mule.version
+		applicationVersion = version
+    }
+}
