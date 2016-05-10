@@ -59,7 +59,7 @@ configurations {
 //and Mule specific properties
 tasks.create(name: "microserviceJar", type: FatCapsule) {
     applicationClass "com.redpill.MicroserviceMuleBootstrap"
-
+	
     from sourceSets.main.resources
     embedConfiguration configurations.shadowRuntime
 	classifier 'microservice'
@@ -73,3 +73,4 @@ tasks.create(name: "microserviceJar", type: FatCapsule) {
 		applicationVersion = version
     }
 }
+
