@@ -45,7 +45,7 @@ gradle clean microserviceJar
 4) Run
  
 ```
-java -jar build/libs/mule-example-1.0-microservice.jar 
+java -jar build/libs/mule-example-microservice-1.0.jar 
 ```
 
 5) Go to http://localhost:8081/mule-ms

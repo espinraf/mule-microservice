@@ -62,7 +62,7 @@ tasks.create(name: "microserviceJar", type: FatCapsule) {
 	
     from sourceSets.main.resources
     embedConfiguration configurations.shadowRuntime
-	classifier 'microservice'
+	archiveName = "${archivesBaseName}-microservice-${version}.${jar.extension}"
 
     capsuleManifest {
 		//If you use Mule Enterprise, this handles the the License
@@ -71,6 +71,7 @@ tasks.create(name: "microserviceJar", type: FatCapsule) {
 		applicationId = archivesBaseName
 		applicationName = "Build by " + System.getProperty("user.name") + " Mule ver: " + mule.version
 		applicationVersion = version
+		jvmArgs = ["-javaagent:/Users/espinraf/Github/mule-microservice/jolokia-jvm-1.3.3-agent.jar"]
     }
 }
 
