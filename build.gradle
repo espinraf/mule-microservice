@@ -71,7 +71,6 @@ tasks.create(name: "microserviceJar", type: FatCapsule) {
 		applicationId = archivesBaseName
 		applicationName = "Build by " + System.getProperty("user.name") + " Mule ver: " + mule.version
 		applicationVersion = version
-		jvmArgs = ["-javaagent:/Users/espinraf/Github/mule-microservice/jolokia-jvm-1.3.3-agent.jar"]
     }
 }
 
