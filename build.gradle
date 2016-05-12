@@ -62,7 +62,7 @@ tasks.create(name: "microserviceJar", type: FatCapsule) {
 	
     from sourceSets.main.resources
     embedConfiguration configurations.shadowRuntime
-	archiveName = "${archivesBaseName}-microservice-${version}.${jar.extension}"
+	classifier "microservice"
 
     capsuleManifest {
 		//If you use Mule Enterprise, this handles the the License
