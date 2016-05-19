@@ -19,6 +19,9 @@ apply plugin: 'com.mulesoft.studio'
 // Apply Capsule plugin
 apply plugin: "us.kirchmeier.capsule"
 
+// Apply Build Announcements
+apply plugin: "build-announcements"
+
 mule.version = '3.7.0'
 mule.muleEnterprise = false
 
