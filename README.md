@@ -2,7 +2,7 @@
 
 The example shows how to create a runnable Jar file with Mule Embedded.
 
-The example uses Mule CE 3.7.0, but it works perfectly with Mule EE (for Mule EE you need Mule EE License).  
+The example uses Mule CE 3.8.0, but it works perfectly with Mule EE (for Mule EE you need Mule EE License).  
 
 For Mule EE, you need:
 
