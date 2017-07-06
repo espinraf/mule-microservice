@@ -53,5 +53,5 @@ java -jar build/libs/mule-example-1.0-microservice.jar
 You should see in you browser: "Hello World from Mule Microservice"
 
 Contact:
-Rafael Espino (rafael.espino@redpill-linpro.com)
+Rafael Espino (rafael.espino@gmail.com)
 
