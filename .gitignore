@@ -40,6 +40,11 @@ local.properties
 .buildpath
 catalog/
 
+# Intellij
+.idea/
+*.iml
+out/
+
 # --------------- #
 # Studio-specific #
 # --------------- #

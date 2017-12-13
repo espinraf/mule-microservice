@@ -2,7 +2,7 @@
 
 The example shows how to create a runnable Jar file with Mule Embedded.
 
-The example uses Mule CE 3.8.0, but it works perfectly with Mule EE (for Mule EE you need Mule EE License).  
+The example uses Mule CE 3.9.0, but it may works with Mule EE, I have not anymore account to EE Repository (for Mule EE you need Mule EE License).  
 
 For Mule EE, you need:
 
@@ -12,7 +12,7 @@ For Mule EE, you need:
 update the muleEnterprise flag to true and update muleversion to the desired Mule EE version  (see https://github.com/mulesoft-labs/mule-gradle-plugin).
 
 ```
-mule.version = '3.7.3'
+mule.version = '3.9.1'
 mule.muleEnterprise = true
 mule.enterpriseRepoUsername = 'your-username'
 mule.enterpriseRepoPassword = 'your-password'
@@ -26,9 +26,9 @@ The Gradle build file uses the the following plugins to create the jar file:
 
 ##Requirements
 
-a) Java 7+
+a) Java 8+
 
-b) Gradle 2.10+
+b) Gradle 4.0+
 
 ## How to run it
 

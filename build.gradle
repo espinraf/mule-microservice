@@ -22,7 +22,7 @@ apply plugin: "us.kirchmeier.capsule"
 // Apply Build Announcements
 apply plugin: "build-announcements"
 
-mule.version = '3.8.0'
+mule.version = '3.9.0'
 mule.muleEnterprise = false
 
 group = "com.redpill"
